@@ -11,7 +11,7 @@ IN: semantic-versioning
 
 : pre-release<=> ( obj1 obj2 -- <=> )
     2dup [ empty? ] either?
-    [ [ length ] bi@ >=< ] [ human<=> ] if ;
+    [ 2length >=< ] [ human<=> ] if ;
 
 PRIVATE>
 

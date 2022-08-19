@@ -670,9 +670,6 @@ PRIVATE>
 : push-when ( ..a elt quot: ( ..a elt -- ..b ? ) accum -- ..b )
     [ keep ] dip rot [ push ] [ 2drop ] if ; inline
 
-: keep-push-when ( ..a elt quot: ( ..a elt -- ..b ? ) accum -- ..b )
-    [ keep ] dip rot [ push ] [ 2drop ] if ; inline
-
 : call-push-when ( ..a elt quot: ( ..a elt -- ..b elt' ? ) accum -- ..b )
     [ call ] dip swap [ push ] [ 2drop ] if ; inline
 

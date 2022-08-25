@@ -672,6 +672,9 @@ PRIVATE>
 : push-when ( ..a elt quot: ( ..a elt -- ..b ? ) accum -- ..b )
     [ keep ] dip rot [ push ] [ 2drop ] if ; inline
 
+: 2push-when ( ..a elt1 elt2 quot: ( ..a elt1 elt2 -- ..b ? ) accum -- ..b )
+    [ keepd ] dip rot [ push ] [ 2drop ] if ; inline
+
 : call-push-when ( ..a elt quot: ( ..a elt -- ..b elt' ? ) accum -- ..b )
     [ call ] dip swap [ push ] [ 2drop ] if ; inline
 
@@ -679,6 +682,9 @@ PRIVATE>
 
 : (selector-as) ( quot length exemplar -- selector accum )
     new-resizable [ [ push-when ] 2curry ] keep ; inline
+
+: (2selector-as) ( quot length exemplar -- selector accum )
+    new-resizable [ [ 2push-when ] 2curry ] keep ; inline
 
 PRIVATE>
 
